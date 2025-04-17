@@ -1,0 +1,30 @@
+{
+    "Version": "2025-04-17",
+    "Statement": [
+      {
+        "Sid": "PublicReadGetObject",
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:GetObject",
+        "Resource": "arn:aws:s3:::vamika-portfolio/*"
+      },
+      {
+        "Sid": "AllowFullAccessToSpecificUser",
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::491085408678:user/sanjeev"
+        },
+        "Action": [
+          "s3:ListBucket",
+          "s3:PutObject",
+          "s3:GetObject",
+          "s3:DeleteObject"
+        ],
+        "Resource": [
+          "arn:aws:s3:::vamika-portfolio",
+          "arn:aws:s3:::vamika-portfolio/*"
+        ]
+      }
+    ]
+  }
+  
